@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div id="book_border">
+        <h1>World's Best Books</h1>
+        <form class="add_new" action="/lofb" method="post">
+            <label for="title">Book Title: </label>
+            <input type="text" name="title" id="title">
+
+            <label for="author">Author: </label>
+            <input type="text" name="author" id="author">
+
+            <label for="genre">Genre: </label>
+            <input type="text" name="genre" id="genre">
+
+            <label for="blurb">Brief description: </label>
+            <input type="text" name="blurb" id="blurb">
+
+            <label for="checked_out">Book Checked Out?</label><br>
+            <select name="checked_out" id="checked_out">
+            <option value="True">True</option>
+            <option value="False">False</option>
+            </select>
+
+            <input type="submit" value="Add book to list">
+        </form>
+        <br>
+
+        <p id="move_down">I think we can all agree that books are the absolute best. Otherwise, what are you doing here?</p><br>
+        <p>Explore our titles below. Click on each book to find out more.</p><br>
+        <section class="all_book_container">
+            {% for book in books %}
+            <div class="single_book_container">
+                <a href="books/{{loop.index0}}">          
+                    <h2 class="centred_title">{{book.title}}</h2>
+                    <h3 class="centred_title">by {{book.author}} </h3>
+                    <h4 class="centred_title">Genre: {{book.genre}}</h4>
+                </a>
+                <form id="centred_delete" action="/lofb/delete/{{loop.index0}}", method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+                <br>
+                {% if book.checked_out == True %}
+                    <span> &#128683; Book Currently Checked Out &#128683;</span>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+</body>
+</html>

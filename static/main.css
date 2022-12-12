@@ -1,0 +1,98 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+    color:  rgb(24, 22, 22);
+}
+
+body{
+    background-image:linear-gradient(140deg, #daf10b 0%, #27b3ef 50%, #35d342 75%);
+}
+
+#book_border {
+    border: 30px solid;
+    border-image: url(books_library.jpeg) 30 round;
+}
+
+h1 {
+    text-align: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.add_new {
+    display: flex;
+    justify-content: space-around;
+}
+
+input, select {
+    background-color: #04425d;
+    color: white;
+    border-radius: 10px;
+    /* border-left: 0px;
+    padding: 0px; */
+    border-right: 40px;
+}
+
+p {
+    text-align: center;
+    font-size: larger;
+}
+
+#move_down {
+    margin-top: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.all_book_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.centred_title {
+    text-align: center;
+}
+
+#centred_delete {
+    margin-left: 120px;
+    margin-top: 30px;
+}
+
+span {
+    margin-left: 40px;
+}
+
+.single_book_container {
+    background-color: rgb(9, 194, 185);
+    color: rgb(24, 22, 22);
+    height: 300px;
+    width: 300px;
+    margin: 35px;
+    border-radius: 10px;
+    align-items: center;   /* why does this do absolutely nothing?!*/
+    justify-content: center;   /* why does this do absolutely nothing?!*/
+}
+
+#sing_book_title {
+    text-decoration: underline;
+}
+
+#sing_book_headers {
+    margin-left: 60px;
+}
+
+#home_nav {
+    margin-top: 20px; /*why does this not do anything??!*/
+    margin-left: 20px;
+}
+
+.blurb {
+    width: 900px;
+    text-align: justify;
+    padding-left: 270px;
+}
